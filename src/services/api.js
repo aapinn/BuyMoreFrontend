@@ -1,4 +1,6 @@
+const API_URL = import.meta.env.VITE_API_URL;
+
 export async function getProducts() {
-  const res = await fetch("http://localhost:3000/products");
+  const res = await fetch(`${API_URL}/products`);
   return res.json();
 }
