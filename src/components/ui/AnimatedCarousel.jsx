@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 import CarouselComponent from "@/pages/components/CarouselComponent"
 
-function AnimatedCarousel() {
+function AnimatedCarousel({component}) {
   return (
     <motion.div
       className="cursor-grab overflow-hidden w-full"
@@ -19,7 +19,9 @@ function AnimatedCarousel() {
           ease: "easeInOut",
         }}
       >
-        <CarouselComponent/>
+        <div>
+          {component}
+        </div>
       </motion.div>
     </motion.div>
   )

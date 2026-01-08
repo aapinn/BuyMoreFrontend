@@ -20,6 +20,14 @@ function Navbar() {
   const [searchResults, setSearchResults] = useState([]);
   const [isLogin, setIsLogin] = useState(false);
   const [user, setUser] = useState(null);
+  function getGreeting() {
+    const hour = new Date().getHours();
+
+    if (hour < 12) return "Good morning";
+    if (hour < 18) return "Good afternoon";
+    if (hour < 21) return "Good evening";
+    return "Good night";
+  } 
 
   const updateUser = () => {
     const storedUser = getUser();
@@ -59,9 +67,9 @@ function Navbar() {
   };
 
   return (
-    <header className="w-full bg-white sticky md:pb-5 top-0 z-50 flex-col shadow-md">
-      <div className="max-w-7xl mx-auto hidden md:flex px-4 2xl:px-0 py-5 items-center gap-6 justify-between">
-        <nav className="flex gap-4">
+    <header className="max-w-7xl mx-auto bg-white sticky md:pb-5 top-0 z-50 flex flex-col justify-between">
+      <div className="max-w-7xl pt-3 py-2 md:py-4 flex md:flex px-8 items-center gap-6 justify-between">
+        {/* <nav className="flex gap-4">
           <Link to="/" className="flex text-xs items-center gap-2 font-bold text-orange-600">
             Download Aplikasi Buymore
           </Link>
@@ -71,7 +79,7 @@ function Navbar() {
         </nav>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 md:px-12 2xl:px-0 flex items-center gap-6 py-3">
+      <div className="max-w-7xl mx-auto px-4 md:px-12 2xl:px-0 flex justify-between items-center gap-6 py-3">
         <Link to="/" className="hidden md:flex items-center gap-2 font-bold text-xl text-orange-600">
           🛒 BuyMore
         </Link>
@@ -79,19 +87,43 @@ function Navbar() {
         <nav className="hidden md:flex items-center gap-6 text-sm">
           <Link className="hover:text-orange-600 border-b-2 border-orange-600">Kategori</Link>
           <Link className="hover:text-orange-600">Inspirasi</Link>
-        </nav>
-
-        <div className="flex-1 relative flex">
+        </nav> */}
+        <div className="flex gap-4">
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              <button className="text-sm font-semibold w-12 h-12 rounded-full bg-amber-500 text-gray-700 cursor-pointer"></button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-50 mr-6">
+              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>Profile</DropdownMenuItem>
+              <DropdownMenuItem>Billing</DropdownMenuItem>
+              <DropdownMenuItem>Team</DropdownMenuItem>
+              <DropdownMenuItem>Subscription</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+          <div className="flex min-w-max flex-col py-[4.5px] justify-center">
+            <h1 className="font-bold text-[16px]">Hi, {user?.username || "User"} </h1>
+            <p className="text-xs text-neutral-400">{getGreeting()}</p>
+          </div>
+        </div>
+        <div className="relative justify-between md:w-full flex">
           <input
             type="text"
             placeholder="Cari barang..."
             value={searchTerm}
             onChange={handleSearch}
-            className="w-full border rounded-l-lg px-4 py-2 text-sm focus:outline-none"
+            className="w-full hidden md:block border rounded-l-lg px-4 py-2 text-sm focus:outline-none"
           />
-          <button className="bg-orange-600 px-4 rounded-r-lg flex items-center justify-center">
-            <Search className="text-white" size={18} />
-          </button>
+          <div className="flex justify-center md:gap-2 items-center">
+            <button className="md:bg-amber-500 px-4 h-full rounded-r-lg flex items-center justify-center">
+              <Search className="rounded-l-2xl" size={24} />
+            </button>
+            <button>
+              <Bell size={20} className="text-gray-700 cursor-pointer" />
+            </button>
+          </div>
+          
 
           {searchTerm && (
             <div className="absolute left-0 right-0 top-full bg-white border rounded-md p-2 mt-1 shadow-lg z-50 text-sm max-h-60 overflow-y-auto">
@@ -129,7 +161,7 @@ function Navbar() {
           )}
         </div>
 
-        <div className="flex items-center gap-4">
+        {/* <div className="flex items-center gap-4">
           <Link to="/cart" className="relative">
             <ShoppingCart size={22} className="text-gray-700" />
             {count > 0 && <Badge className="absolute -top-2 -right-2 text-[10px] min-w-5 justify-center">{count}</Badge>}
@@ -179,7 +211,7 @@ function Navbar() {
               )}
             </DropdownMenuContent>
           </DropdownMenu>
-        </div>
+        </div> */}
       </div>
       <NavMenu />
     </header>
