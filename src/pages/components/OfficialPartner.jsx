@@ -43,12 +43,12 @@ export default function OfficialPartners() {
     },
     {
       name: "Toys Kingdom",
-      logo: partnerLogo.toysKingdom,
+      logo: partnerLogo.toyskingdom,
       url: "https://www.ruparupa.com/toyskingdomonline",
     },
     {
       name: "Pet Kingdom",
-      logo: partnerLogo.petKingdom,
+      logo: partnerLogo.petkingdoms,
       url: "https://www.ruparupa.com/search?search=Pet+Kingdom",
     },
     {
