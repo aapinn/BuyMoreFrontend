@@ -5,10 +5,10 @@ import informa from "@/assets/partnerLogo/informa.webp";
 import informaElectronic from "@/assets/partnerLogo/informaElectronic.webp";
 import krisbow from "@/assets/partnerLogo/krisbow.webp";
 import pendopo from "@/assets/partnerLogo/pendopo.webp";
-import petkingdoms from "@/assets/partnerLogo/petKingdoms.webp";
+import petkingdoms from "@/assets/partnerLogo/petkingdoms.webp";
 import rolka from "@/assets/partnerLogo/rolka.webp";
 import selma from "@/assets/partnerLogo/selma.webp";
-import toyskingdom from "@/assets/partnerLogo/toysKingdom.webp";
+import toyskingdom from "@/assets/partnerLogo/toyskingdom.webp";
 import { Link } from "react-router-dom";
 
 const partnerLogo = {
@@ -19,10 +19,10 @@ const partnerLogo = {
     informaElectronic,
     krisbow,
     pendopo,
-    petKingdom: petkingdoms,
+    petkingdoms,
     rolka,
     selma,
-    toysKingdom: toyskingdom,
+    toyskingdom,
 };
 export default function OfficialPartners() {
   const partners = [
