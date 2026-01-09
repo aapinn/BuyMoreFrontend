@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Badge } from "@/components/ui/badge";
 import { Search, ShoppingCart, Bell, User } from "lucide-react";
 import NavMenu from "./NavMenu";
 import { formatRupiah, getCart } from "@/utils/cart";
@@ -90,17 +89,7 @@ function Navbar() {
         </nav> */}
         <div className="flex gap-4">
           <DropdownMenu>
-            <DropdownMenuTrigger>
-              <button className="text-sm font-semibold w-12 h-12 rounded-full bg-amber-500 text-gray-700 cursor-pointer"></button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-50 mr-6">
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Profile</DropdownMenuItem>
-              <DropdownMenuItem>Billing</DropdownMenuItem>
-              <DropdownMenuItem>Team</DropdownMenuItem>
-              <DropdownMenuItem>Subscription</DropdownMenuItem>
-            </DropdownMenuContent>
+              <Link className="text-sm font-semibold w-12 h-12 rounded-full bg-amber-500 text-gray-700 cursor-pointer"></Link>
           </DropdownMenu>
           <div className="flex min-w-max flex-col py-[4.5px] justify-center">
             <h1 className="font-bold text-[16px]">Hi, {user?.username || "User"} </h1>

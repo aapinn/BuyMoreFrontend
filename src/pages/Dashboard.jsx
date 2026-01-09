@@ -9,6 +9,7 @@ import CarouselComponent from "./components/CarouselComponent"
 import AnimatedCarousel from "@/components/ui/AnimatedCarousel";
 import { Carousel, CarouselContent, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import OfficialPartner from "./components/OfficialPartner";
+import CategoryIcons from "./components/CategoryIcons";
 
 export default function Dashboard() {
   const { products, loading } = useProducts();
@@ -39,17 +40,21 @@ export default function Dashboard() {
             <button className="w-full text-[10px] py-2 text-right font-semibold text-orange-400 hover:text-orange-600">Lihat Semua Promo</button>
 
             {/* Official Partner */}
+            <h1 className="font-semibold text-xs md:text-md lg:text-lg xl:text-xl w-fit rounded-2xl rounded-b-none  ">Official Partner</h1>
             <OfficialPartner/>
+            <hr />
+            <CategoryIcons />
+            <hr />
 
             {/* Product Grid */}
-            <h1 className="font-semibold pt-2 text-md md:text-md lg:text-lg xl:text-lg w-fit rounded-2xl rounded-b-none px-5 bg-amber-300">
+            {/* <h1 className="font-semibold pt-2 text-md md:text-md lg:text-lg xl:text-lg w-fit rounded-2xl rounded-b-none px-5 bg-amber-300">
               Penawaran Spesial Hari Ini
             </h1>
             <div className="w-full px-5 p-5 bg-amber-300 rounded-tl-none rounded-3xl">
-            <AnimatedCarousel component={<CarouselComponent/>}/>
-            </div>
+              <AnimatedCarousel component={<CarouselComponent/>}/>
+            </div> */}
 
-            <h1 className="font-semibold py-2 pt-10 text-xs md:text-md lg:text-lg xl:text-xl w-fit rounded-2xl rounded-b-none  ">Semua Produk</h1>
+            <h1 className="font-semibold py-2 text-xs md:text-md lg:text-lg xl:text-xl w-fit rounded-2xl rounded-b-none  ">Semua Produk</h1>
             <div className="
               grid grid-cols-2 
               sm:grid-cols-2 
@@ -75,7 +80,7 @@ export default function Dashboard() {
                       "
                     >
                       {/* Image */}
-                      <div className="w-full h-30 sm:h-45 rounded-lg overflow-hidden">
+                      <div className="w-full h-30 sm:h-45 rounded-lg rounded-b-none overflow-hidden">
                         <img
                           src={product.image}
                           alt={product.name}
@@ -134,10 +139,6 @@ export default function Dashboard() {
                         Beli Sekarang
                         </button>
                       </div>
-
-
-                      {/* Button */}
-
                     </Link>
                   ))
               )}

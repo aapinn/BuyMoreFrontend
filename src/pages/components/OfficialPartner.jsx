@@ -1,116 +1,111 @@
-export default function CategoryIcons() {
-const categories = [
-  {
-    name: "ruparupa bisnis",
-    icon: "🔗",
-    isNew: true,
-  },
-  {
-    name: "Best Deals",
-    icon: "💸",
-  },
-  {
-    name: "Furniture",
-    icon: "🛋️",
-  },
-  {
-    name: "Rak & Penyimpanan",
-    icon: "🗄️",
-  },
-  {
-    name: "Dapur Minimalis",
-    icon: "🍳",
-  },
-  {
-    name: "Dekorasi Rumah",
-    icon: "🖼️",
-  },
-  {
-    name: "Kamar Tidur",
-    icon: "🛏️",
-  },
-  {
-    name: "Kamar Mandi",
-    icon: "🚿",
-  },
-  {
-    name: "Ruang Tamu",
-    icon: "🛋️",
-  },
-  {
-    name: "Peralatan Elektronik",
-    icon: "📺",
-  },
-  {
-    name: "Lampu & Pencahayaan",
-    icon: "💡",
-  },
-  {
-    name: "Peralatan Kantor",
-    icon: "🖥️",
-  },
-  {
-    name: "Alat Kebersihan",
-    icon: "🧹",
-  },
-  {
-    name: "Perlengkapan Bayi",
-    icon: "👶",
-  },
-  {
-    name: "Olahraga & Outdoor",
-    icon: "🏕️",
-  },
-  {
-    name: "Hobi & Gaya Hidup",
-    icon: "🎨",
-  },
-  {
-    name: "Fashion",
-    icon: "👕",
-  },
-  {
-    name: "Sepatu & Aksesoris",
-    icon: "👟",
-  },
-  {
-    name: "Travel & Organizer",
-    icon: "🧳",
-  },
-  {
-    name: "Promo Hari Ini",
-    icon: "🔥",
-  },
-];
+import ataru from "@/assets/partnerLogo/ataru.webp";
+import azko from "@/assets/partnerLogo/azko.webp";
+import eyeSoul from "@/assets/partnerLogo/eyeSoul.webp";
+import informa from "@/assets/partnerLogo/informa.webp";
+import informaElectronic from "@/assets/partnerLogo/informaElectronic.webp";
+import krisbow from "@/assets/partnerLogo/krisbow.webp";
+import pendopo from "@/assets/partnerLogo/pendopo.webp";
+import petkingdoms from "@/assets/partnerLogo/petKingdoms.webp";
+import rolka from "@/assets/partnerLogo/rolka.webp";
+import selma from "@/assets/partnerLogo/selma.webp";
+import toyskingdom from "@/assets/partnerLogo/toysKingdom.webp";
+import { Link } from "react-router-dom";
 
+const partnerLogo = {
+    ataru,
+    azko,
+    eyeSoul,
+    informa,
+    informaElectronic,
+    krisbow,
+    pendopo,
+    petKingdom: petkingdoms,
+    rolka,
+    selma,
+    toysKingdom: toyskingdom,
+};
+export default function OfficialPartners() {
+  const partners = [
+    {
+      name: "AZKO",
+      logo: partnerLogo.azko,
+      url: "https://www.ruparupa.com/search?search=AZKO",
+    },
+    {
+      name: "INFORMA",
+      logo: partnerLogo.informa,
+      url: "https://www.ruparupa.com/informastore",
+    },
+    {
+      name: "INFORMA Electronics",
+      logo: partnerLogo.informaElectronic,
+      url: "https://www.ruparupa.com/search?search=INFORMA+Electronics",
+    },
+    {
+      name: "Toys Kingdom",
+      logo: partnerLogo.toysKingdom,
+      url: "https://www.ruparupa.com/toyskingdomonline",
+    },
+    {
+      name: "Pet Kingdom",
+      logo: partnerLogo.petKingdom,
+      url: "https://www.ruparupa.com/search?search=Pet+Kingdom",
+    },
+    {
+      name: "SELMA",
+      logo: partnerLogo.selma,
+      url: "https://www.ruparupa.com/search?search=SELMA",
+    },
+    {
+      name: "ATARU",
+      logo: partnerLogo.ataru,
+      url: "https://www.ruparupa.com/search?search=ATARU",
+    },
+    {
+      name: "Pendopo",
+      logo: partnerLogo.pendopo,
+      url: "https://www.ruparupa.com/search?search=Pendopo",
+    },
+    {
+      name: "Krisbow",
+      logo: partnerLogo.krisbow,
+      url: "https://www.ruparupa.com/search?search=Krisbow",
+    },
+    {
+      name: "ROLLKA",
+      logo: partnerLogo.rolka,
+      url: "https://www.ruparupa.com/search?search=ROLKA",
+    },
+    {
+      name: "EYE SOUL",
+      logo: partnerLogo.eyeSoul,
+      url: "https://www.ruparupa.com/search?search=EYE+SOUL",
+    },
+  ];
 
   return (
     <div className="w-full py-2 overflow-x-auto scrollbar-hide">
-      <div className="flex min-w-max">
-        {categories.map((item, i) => (
-          <div
-            key={i}
-            className="flex flex-col items-center text-center w-18"
+      <div className="flex gap-2 md:space-x-6">
+        {partners.map((item) => (
+          <Link
+            key={item.name}
+            href={item.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col gap-2 items-center text-center w-28"
           >
-            <div className="relative">
-              {/* Icon box */}
-              <div className="w-12 h-12 flex items-center justify-center rounded-xl border border-neutral-200 bg-white text-xl">
-                {item.icon}
-              </div>
-
-              {/* Badge NEW */}
-              {item.isNew && (
-                <span className="absolute -top-2 -right-2 text-[8px] bg-blue-500 text-white px-2 py-0.5 rounded-full">
-                  New
-                </span>
-              )}
+            <div className="w-25 md:w-40 h-20 flex items-center justify-center rounded-xl bg-white">
+              <img
+                src={item.logo}
+                alt={item.name}
+                className="max-w-full max-h-full object-contain "
+              />
             </div>
 
-            {/* Text */}
-            <p className="h-10 flex text-center items-center text-[10px] w-fit leading-tight">
+            <p className="flex items-center text-[10px] leading-tight mt-1">
               {item.name}
             </p>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
